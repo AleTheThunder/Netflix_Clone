@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body,html{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000;
+}
+
+#app{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+body::-webkit-scrollbar,html::-webkit-scrollbar,#app::-webkit-scrollbar{width: 0;}
+
+:root{
+    --accent-color: #6cd65c;
+}
