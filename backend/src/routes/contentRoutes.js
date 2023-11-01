@@ -16,4 +16,10 @@ module.exports = function(app){
         res.status(response.code).send(response.data);
     });
 
+    app.post('/content/add/:title,:description,:type,:duration,:releaseDate,:language', async (req, res) => {
+        const { title, description, type, duration, releaseDate, language } = req.params;
+    
+        const response = await contentController.addNewContent(title, description, type, duration, releaseDate, language);
+        res.status(response.code).send(response.data);
+    });
 }

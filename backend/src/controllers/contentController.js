@@ -39,9 +39,23 @@ async function getRating(id){
     return {data: rating, code: CODES.SUCCESS.code};
 }
 
+async function addNewContent(title, description, type, duration, releaseDate, language) {
+    try {
+        const result = await db.query(
+            `INSERT INTO content (title, description, type, duration, release_date, language)
+             VALUES (?, ?, ?, ?, ?, ?)`,
+            [title, description, type, duration, releaseDate, language]
+        );
+
+        return { data: result, code: CODES.SUCCESS.code };
+    } catch (error) {
+        return { data: error.message, code: CODES.ERROR.code };
+    }
+}
 
 module.exports = {
     getTop, 
     getLatest,
-    getRating
+    getRating,
+    addNewContent
 }
